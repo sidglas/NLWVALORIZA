@@ -41,24 +41,24 @@ export class CreateCompliments1624514947006 implements MigrationInterface {
             referencedTableName: "users",
             referencedColumnNames: ["id"],
             columnNames: ["user_sender"],
-            onDelete: "SET_NULL",
-            onUpdate: "SET_NULL"
+            onDelete: "SET NULL",
+            onUpdate: "SET NULL"
           },
           {
             name: "FKUserReceiverCompliments",
             referencedTableName: "users",
             referencedColumnNames: ["id"],
             columnNames: ["user_receiver"],
-            onDelete: "SET_NULL",
-            onUpdate: "SET_NULL"
+            onDelete: "SET NULL",
+            onUpdate: "SET NULL"
           },
           {
             name: "FKTagCompliments",
             referencedTableName: "tags",
             referencedColumnNames: ["id"],
             columnNames: ["tag_id"],
-            onDelete: "SET_NULL",
-            onUpdate: "SET_NULL"
+            onDelete: "SET NULL",
+            onUpdate: "SET NULL"
           }
         ]
       })    
