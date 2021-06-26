@@ -1,4 +1,6 @@
 import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn} from "typeorm";
+import { Expose, Exclude } from "class-transformer"
+
 import { v4 as uuid} from "uuid"
 
 @Entity("users")
@@ -10,14 +12,21 @@ class User {
   @Column()
   name: string;
 
+  @Exclude()
   @Column()
   email: string;
 
-  @Column()
-  password: string;
+  @Expose({name: "email_Destaque"})
+  nameCustom (): string{
+    return `** ${this.email}`
+  }
 
   @Column()
   admin: boolean;
+
+  @Exclude()
+  @Column()
+  password: string;
 
   @CreateDateColumn()
   created_at: Date;
