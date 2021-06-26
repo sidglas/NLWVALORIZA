@@ -11,22 +11,13 @@ interface IComplimentRequest {
 
 class CreateComplimentService  {
 
-
+  
 
   async execute({tag_id, user_sender, user_receiver, message} :IComplimentRequest) {
 
-    console.log('CreateComplimentService 01')
-
+    console.log('na CreateComplimentService', user_sender, user_receiver)
     const usersRepositories = getCustomRepository(UsersRepositories)
-
-    console.log('CreateComplimentService 02')
-
-
     const complimentsRepository = getCustomRepository(ComplimentsRepositories);
-
-    console.log('CreateComplimentService 03')
-
-
     
     if ( user_sender === user_receiver ) {
       throw new Error("Target receiver must bee different from logged one")

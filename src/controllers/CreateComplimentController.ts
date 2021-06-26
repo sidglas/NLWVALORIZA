@@ -5,13 +5,16 @@ class CreateComplimentController {
 
   async handle(request: Request, response: Response){
 
-    console.log('estou na CreateComplimentController')
-    const { tag_id , user_sender, user_receiver,  message } = request.body;
-    console.log('antes')
+    const { tag_id , user_receiver,  message } = request.body;
+    const {user_id} = request
     const createComplimentService = new CreateComplimentService()
-    console.log('depois', createComplimentService)
-    const compliment = await createComplimentService.execute({ tag_id , user_sender, user_receiver,  message })
-    console.log('compliment', compliment)
+    console.log('devo usar o sender ', user_id)
+    const compliment = await createComplimentService.execute({ 
+      tag_id , 
+      user_sender: user_id, 
+      user_receiver,  
+      message 
+    })
     return response.json(compliment)
 
   }

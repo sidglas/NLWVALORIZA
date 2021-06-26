@@ -10,7 +10,6 @@ class CreateTagService  {
       throw new Error("Invalid Tag name")
     }
 
-    console.log('Nome passou', name)
     //const usersRepository = new UsersRepositories(); substituído pois usamos repos customizados
     //por ser um custom repository 
     const tagsRepository = getCustomRepository(TagsRepositories);
