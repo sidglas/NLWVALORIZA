@@ -17,8 +17,7 @@ export function ensureAuthenticated (request: Request, response: Response, next:
   try {
     const { sub } = verify (token, "2c400209672b10fc2b6d992a8b323965") as IPayload;
     request.user_id = sub;
-    console.log('na ensure Authenticated SUB', sub)
-    console.log('na ensure TOKEN', token)
+
     return next()
   } catch (err) {
     return response.status(401).end()

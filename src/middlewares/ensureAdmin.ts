@@ -9,7 +9,7 @@ export async function ensureAdmin (
   response: Response,  next: NextFunction  )  {
   
     const { user_id } = request
-    console.log('na ensure o user_id =', user_id)
+
     const usersRepository = getCustomRepository(UsersRepositories);
     const {admin} =  await usersRepository.findOne( user_id);
  

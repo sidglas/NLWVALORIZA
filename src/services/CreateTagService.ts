@@ -18,7 +18,6 @@ class CreateTagService  {
       name
     });
 
-    console.log('Nome repassou', name)
     if ( tagAlreadyExists ) {
       throw new Error("Tag already exists")
     }

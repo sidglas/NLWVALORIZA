@@ -26,8 +26,6 @@ class AuthenticateUserService{
       throw new Error("email/password incorrect")
     }
 
-    console.log('autenticando email/ user', user.email, user.id)
-
     const token = sign(
       {
         email: user.email
@@ -39,7 +37,6 @@ class AuthenticateUserService{
       }
     )
 
-      console.log('token ', token)
     return token;
 
   }

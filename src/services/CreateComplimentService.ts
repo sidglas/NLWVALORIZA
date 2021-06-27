@@ -15,7 +15,6 @@ class CreateComplimentService  {
 
   async execute({tag_id, user_sender, user_receiver, message} :IComplimentRequest) {
 
-    console.log('na CreateComplimentService', user_sender, user_receiver)
     const usersRepositories = getCustomRepository(UsersRepositories)
     const complimentsRepository = getCustomRepository(ComplimentsRepositories);
     
